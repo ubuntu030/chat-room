@@ -17,9 +17,21 @@
       li {
         display: flex;
         flex-direction: column;
+        margin: 5px;
+        align-items: flex-start;
 
         &.right {
           align-items: flex-end;
+        }
+
+        .avatar {
+          color: #fff;
+        }
+
+        .message {
+          padding: 10px;
+          background: #fff;
+          border-radius: 10px;
         }
       }
     }

@@ -35,10 +35,10 @@ const createPiecesOfMessage = messages => {
 	const elms = messages.map(item => {
 		return (
 			<li key={uuidv4()} className={item.id === 'max520' ? 'right' : ''}>
-				<div>
+				<div className="avatar">
 					{item.id}
 				</div>
-				<div>
+				<div className="message">
 					{item.message}
 				</div>
 			</li>
