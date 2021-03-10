@@ -18,10 +18,30 @@
 
   .present-area {
     grid-area: c2;
-    background-color: bisque;
+    background-color: #252933;
     display: flex;
     flex: 1;
     height: inherit;
   }
 
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1E1E1E;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
