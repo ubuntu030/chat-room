@@ -46,8 +46,18 @@
       width: 100%;
       resize: none;
       height: 50px;
+      font-size: 20px;
+      padding: 5px;
+      background: transparent;
+      color: #fff;
     }
 
-    .text-send {}
+    .text-send {
+      cursor: pointer;
+      background: transparent;
+      border: 2px solid #319DFB;
+      color: #319DFB;
+      padding: 5px;
+    }
   }
 }
