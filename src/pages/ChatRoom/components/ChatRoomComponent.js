@@ -4,11 +4,11 @@ import { v4 as uuidv4 } from 'uuid';
 import "./chatRoom.scss";
 
 const ChatRoomComponent = props => {
-	const { messages } = props;
+	const { messages, sendMessage } = props;
 	return (
 		<div className="chat-room-container">
 			<MessageArea messages={messages} />
-			<TypingArea />
+			<TypingArea sendMessage={sendMessage} />
 		</div>
 	)
 }
@@ -22,11 +22,17 @@ const MessageArea = ({ messages }) => {
 	)
 }
 
-const TypingArea = () => {
+const TypingArea = ({ sendMessage }) => {
+	const [value, setValue] = useState('');
+	const handleClick = () => {
+		sendMessage(value);
+		setValue('');
+	}
 	return (
 		<div className="type-ctn">
-			<textarea className="text-input" type="text" />
-			<button className="text-send">send</button>
+			<textarea className="text-input" type="text"
+				value={value} onChange={e => setValue(e.target.value)} />
+			<button className="text-send" onClick={handleClick}>send</button>
 		</div>
 	)
 }
