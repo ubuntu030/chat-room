@@ -1,0 +1,53 @@
+.login-box-container {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($color: #505050, $alpha: 0.8);
+  backdrop-filter: blur(3px);
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+
+  .login-box-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba($color: #fff, $alpha: 0.8);
+    padding: 10px;
+    border-radius: 5px;
+
+    .input-field {
+      margin: 5px;
+
+      .name {
+        input {
+          padding: 5px;
+          background: transparent;
+          border: 2px solid #4B98D7;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .control-field {
+      margin: 5px;
+
+      button {
+        width: 100%;
+        background: transparent;
+        border: 2px solid #4B98D7;
+        color: #4B98D7;
+        padding: 5px;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+}
