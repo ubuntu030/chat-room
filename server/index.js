@@ -30,6 +30,19 @@ app.listen(API_PORT, () => {
 
 // SOCKET
 server.listen(SOCKET_PORT)
+
+const messages = [];
+
 io.on('connection', (socket) => {
 	console.log('a user connected');
+	// 用戶連線時發送歷史訊息
+	io.emit("allMessage", messages)
+
+	socket.on("sendMessage", message => {
+		console.log(message)
+		const newMessage = { ...message, "time": new Date().getTime() }
+		messages.push(newMessage);
+		io.emit("newMessage", newMessage);
+	})
+
 });
