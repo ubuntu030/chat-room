@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { io } from "socket.io-client";
+import socket from "../../socket";
 
 import ChatRoomComponent from "./components/ChatRoomComponent";
 
@@ -8,20 +8,9 @@ import messages from "../../../src/api/chat_data.json";
 
 
 const ChatRoomContainer = () => {
-	let socket = null;
 	useEffect(() => {
-		socket = io("http://localhost:3030", {
-			reconnectionDelayMax: 10000,
-		});
 
-		socket.on("allMessage", message => {
-			console.log('[allMessage]:', message)
-		});
-
-		socket.on("newMessage", message => {
-			console.log('[newMessage]:', message)
-		})
-
+		console.log(socket);
 	}, []);
 
 	const sendMessage = message => {
