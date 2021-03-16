@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { bindActionCreators } from 'redux'
 import { useDispatch, useSelector } from "react-redux";
 // action creators
 import { setIsShowLogin, settingUser } from "../../state/login/loginReducer";
@@ -10,16 +11,13 @@ const LoginBoxContainer = () => {
 	const dispatch = useDispatch();
 	const userInfo = useSelector(getUserInfo);
 	const isShowLogin = useSelector(getIsShowLogin);
-	const dispatchIsShowLogin = isShow => {
-		dispatch(setIsShowLogin(isShow));
-	}
-	const dispatchSettingUser = info => {
-		dispatch(settingUser(info));
-	}
+	const actionCreators = bindActionCreators({
+		setIsShowLogin,
+		settingUser
+	}, dispatch);
 
 	const props = {
-		dispatchIsShowLogin,
-		dispatchSettingUser,
+		actionCreators: actionCreators,
 		userInfo: userInfo,
 		isShowLogin: isShowLogin
 	}

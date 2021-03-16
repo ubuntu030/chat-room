@@ -4,18 +4,22 @@ import "./loginBox.scss";
 
 const LoginBoxComponent = (props) => {
 	const {
-		dispatchIsShowLogin,
-		dispatchSettingUser,
+		// dispatchIsShowLogin,
+		// dispatchSettingUser,
+		actionCreators: {
+			setIsShowLogin,
+			settingUser
+		},
 		userInfo,
 		isShowLogin
 	} = props;
 	const [name, setName] = useState('max520');
 	const handleClick = () => {
-		dispatchSettingUser({
+		settingUser({
 			id: '',
 			name: name
 		});
-		dispatchIsShowLogin(false);
+		setIsShowLogin(false);
 		setName('');
 	}
 	const isDisplay = (isShowLogin || !userInfo.name) ? true : false;
